@@ -1,11 +1,5 @@
 <?php
-require 'config.php';
 
-$controller = $_GET['controller'] ?? 'user';
-$action = $_GET['action'] ?? 'index';
+require_once ("apps/Boot.php");
 
-require "controllers/" . ucfirst($controller) . "Controller.php";
-$controllerName = ucfirst($controller) . "Controller";
-$controller = new $controllerName();
-$controller->$action();
-?>
+$apps = new Boot();
